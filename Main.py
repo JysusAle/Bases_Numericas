@@ -119,13 +119,11 @@ def conversor_bases_parte_decimal(numero_a_convertir, base_entrada, base_destino
         
             return -1
 
-  for potencia_actual in range(-1, -7, -1):
-      print(10 ** (potencia_actual))
-      valor_actual = min(int(numero_apoyo_en_decimal // (base_destino ** (potencia_actual))), base_destino - 1)
-      print(potencia_actual)
-      print(valor_actual)
+  for potencia_actual in range(6):
+      numero_apoyo_en_decimal *= base_destino
+      valor_actual = int(numero_apoyo_en_decimal)
       numero_convertido += Arreglo_de_bases[valor_actual]
-      numero_apoyo_en_decimal -= valor_actual * (base_destino ** (potencia_actual))
+      numero_apoyo_en_decimal -= valor_actual
 
   return numero_convertido
     
